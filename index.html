@@ -905,7 +905,7 @@ svg.fd-circle-dot {
 
 .assets-bgvideo {
   width: 100%;
-  height: 455px;
+  height: 755px;
 }
 
 .assets-bgvideo video{
@@ -1271,6 +1271,13 @@ svg.fd-circle-dot {
 }
 
 @media (max-width: 992px) {
+  .play_games{
+    flex-direction: column;
+    align-items: center;
+  }
+  .play_game{
+    margin-bottom: 50px;
+  }
 
   .central-block {
   max-width: 960px;
@@ -1565,7 +1572,7 @@ svg.fd-circle-dot {
   }
 
   .assets-bgvideo {
-    height: 630px;
+    height: auto;
   }
 
   .assets-card-inner {
@@ -1757,6 +1764,20 @@ svg.fd-circle-dot {
           <div class="assets-bgcolor">
             <div class="central-block assets-block">
               <h2 class="assets-title">Our Advantages</h2>
+              <div class="play_games">
+                <div class="play_game">
+                  <img src="gallery/1.jpg" alt="">
+                  <a id="game1">play</a>
+                </div>
+                <div class="play_game">
+                  <img src="gallery/2.png" alt="">
+                  <a id="game2">play</a>
+                </div>
+                <div class="play_game">
+                  <img src="gallery/3.jpg" alt="">
+                  <a id="game3">play</a>
+                </div>
+              </div>
               <div class="assets-flexbox">
                 <div class="assets-card">
                   <div class="assets-card-first">
@@ -2057,7 +2078,107 @@ svg.fd-circle-dot {
         </div>
       </div>
     </footer>
-    
+    <style>
+      .play_games{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .play_game{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .play_game img{
+        width: 300px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+      .play_game a{
+        background-color: #FF6F91;
+        border-radius: 5px;
+        width: 200px;
+        height: 40px;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .pop_iframe{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #FFFFFF66;
+    display: flex;
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+}
+iframe{
+    width: 860px;
+    height: 570px;
+    border-radius: 20px;
+    position: relative;
+ }
+ .abs_ex{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+ }
+ #frame1{
+     display: none;
+ }
+ 
+ #frame2{
+     display: none;
+ }
+ 
+ #frame3{
+     display: none;
+ }
+.iframe_small{
+  display: flex;
+  position: relative;
+}
+      @media (max-width: 992px) {
+        .abs_ex{
+          display: none;
+        }
+  .play_games{
+    flex-direction: column;
+    align-items: center;
+  }
+  .play_game{
+    margin-bottom: 50px;
+  }
+  .assets-bgvideo{
+    height: 1400px;
+  }
+  .pop_iframe{
+        width: 100%;
+    }
+    iframe{
+        width: 100%;
+        height: 570px;
+        border-radius: 20px;
+     }
+}
+@media (max-width: 576px) {
+  .assets-bgvideo{
+    height: 1500px;
+  }
+}
+    </style>
 
    
     
@@ -2067,6 +2188,47 @@ svg.fd-circle-dot {
 
     
 
-    
+<div class="pop_iframe" id="frame1">
+
+</div>
+<div class="pop_iframe" id="frame2">
+
+</div>
+<div class="pop_iframe" id="frame3">
+
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+        
+      
+  $('#game1').on('click',function(){
+  $('#frame1').css('display','flex');
+  $('#frame1').html('<div class="iframe_block"><div class="iframe_small"><iframe src="https://ogs-gcm-eu-prod.nyxop.net/gcm/gcm-launcher/launcher.html?gameUrl=https%3A%2F%2Fnyxmaltargs.blueprintgaming.com%2Floader%2F%3Fenvid%3Deur&amp;gameid=BP_FishinFrenzyPrizeLines&amp;operatorid=405&amp;currency=EUR&amp;lang=en-us&amp;mode=demo&amp;device=desktop" style="" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms allow-modals allow-pointer-lock allow-same-origin" allowfullscreen=""></iframe><img src="gallery/exit.png" class="abs_ex" alt=""></div></div>');
+});
+$('#game2').on('click',function(){
+  $('#frame2').css('display','flex');
+  $('#frame2').html('<div class="iframe_block"><div class="iframe_small"><iframe src="https://du102-p.edictmaltaservices.com.mt/gamestart.html?gameKey=adp_fishingfrenzy&amp;gameMode=fun&amp;token=&amp;locale=en_EN&amp;lang=en&amp;demoPlay=1&amp;casino=whow-fm&amp;sound=1&amp;animation=2" style="" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms allow-modals allow-pointer-lock allow-same-origin" allowfullscreen=""></iframe><img src="gallery/exit.png" class="abs_ex" alt=""></div></div>');
+});
+$('#game3').on('click',function(){
+  $('#frame3').css('display','flex');
+  $('#frame3').html('<div class="iframe_block"><div class="iframe_small"><iframe src="https://gvcrgs.blueprintgaming.com/Loader/loader.aspx?platform=Desktop&amp;game=BP_FishinFrenzyAllStars94" style="" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms allow-modals allow-pointer-lock allow-same-origin" allowfullscreen=""></iframe><img src="gallery/exit.png" class="abs_ex" alt=""></div></div>');
+});
+
+
+  jQuery(function($){
+$(document).mouseup(function (e){ 
+  var div = $(".pop_iframe").children('iframe'); 
+  if (!div.is(e.target) 
+      && div.has(e.target).length === 0) {
+        $(".pop_iframe").css('display','none');
+        $(".pop_iframe").html('');
+  }
+});
+});
+$('.abs_ex').on('click',function(){
+  $(".pop_iframe").css('display','none');
+  $(".pop_iframe").html('');
+});
+</script>
 </body>
 </html>
